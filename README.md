@@ -4,7 +4,7 @@
 ### Get your API keys here: 
 https://eu.api.ovh.com/createToken/
 
-### Setup python environment
+### Setup your python environment
 ```bash
 python3 -m venv env
 . env/bin/activate
@@ -21,7 +21,13 @@ cp .env.example .env
 uvicorn main:app --reload
 ```
 
-### OVH Endpoints used in this project
+## Or use docker
+```bash
+docker build -t ovh-api-gateway .
+docker run -d --restart always -p 80:80 --name ovh-api-gateway ovh-api-gateway
+```
+
+## OVH Endpoints used in this project
 ```
 GET /domain/zone
 GET /domain/zone/{zoneName}
